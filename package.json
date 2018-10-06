@@ -1,0 +1,29 @@
+{
+  "name": "snekserve",
+  "version": "1.0.0-beta.0",
+  "description": "A friend HTTP file server with directory listing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "snekserve": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lap00zza/Snek-Serve.git"
+  },
+  "keywords": [
+    "file",
+    "server",
+    "static",
+    "directory",
+    "listing"
+  ],
+  "author": "Jewel Mahanta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lap00zza/Snek-Serve/issues"
+  },
+  "homepage": "https://github.com/lap00zza/Snek-Serve#readme"
+}
