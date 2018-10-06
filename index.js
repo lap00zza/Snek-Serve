@@ -20,6 +20,7 @@ const _readdir = util.promisify(fs.readdir);
 
 const genDirHTML = (files) => {
     let d_listing = "<pre>\n";
+    d_listing += "<a href=\"../\">../</a>\n";
     files.forEach(file => {
         file.isDir
             ? d_listing += `<a href="${file.name}/">${file.name}/</a>\n`

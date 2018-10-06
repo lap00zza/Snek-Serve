@@ -1,5 +1,5 @@
-# :snake: Snek Serve
-SnekServe is a very light file server. Features:
+# `Snek Serve`
+Snek Serve is a lightweight file server. Features:
 * cors support
 * directory listing
 
@@ -13,4 +13,6 @@ snekserve 8080
 ```
 
 ## License
-MIT
+[MIT](https://github.com/lap00zza/Snek-Serve/blob/master/LICENSE)
+
+Copyright (c) 2017 Jewel Mahanta
