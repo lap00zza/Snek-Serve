@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
+if (process.argv[2] === "help") {
+    console.log(
+        "usage: snekserve [PORT]\n\n" +
+        "PORT defaults to 8080 if not specified.\n" +
+        "For help or suggestions visit: https://github.com/lap00zza/snek-serve"
+    );
+    process.exit(0);
+}
+
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
