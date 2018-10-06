@@ -1,7 +1,7 @@
 {
   "name": "snekserve",
-  "version": "1.0.0-beta.0",
-  "description": "A friend HTTP file server with directory listing",
+  "version": "1.0.0-beta.1",
+  "description": "A tiny HTTP file server with directory listing.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
