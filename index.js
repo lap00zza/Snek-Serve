@@ -13,6 +13,7 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const util = require("util");
+const mime = require("mime-types");
 
 const PORT = process.argv[2] || 8080;
 const _access = util.promisify(fs.access);
@@ -35,7 +36,8 @@ const server = http.createServer(async (req, res) => {
     try {
         // if a file does not exist we send a 404 from catch
         await _access(fp, fs.constants.F_OK);
-        if (fs.statSync(fp).isDirectory()) {
+        const fstats = fs.statSync(fp);
+        if (fstats.isDirectory()) {
             let files = await _readdir(fp);
             files = files.map(file => {
                 let isDir = false;
@@ -56,7 +58,8 @@ const server = http.createServer(async (req, res) => {
             res.end(genDirHTML(files));
         } else {
             res.writeHead(200, {
-                "Content-Length": fs.statSync(fp).size,
+                "Content-Type": mime.lookup(path.extname(fp)) || "text/plain",
+                "Content-Length": fstats.size,
                 "Access-Control-Allow-Origin": "*"
             });
             fs.createReadStream(fp).pipe(res);

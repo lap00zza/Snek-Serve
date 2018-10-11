@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/lap00zza/Snek-Serve/issues"
   },
-  "homepage": "https://github.com/lap00zza/Snek-Serve#readme"
+  "homepage": "https://github.com/lap00zza/Snek-Serve#readme",
+  "dependencies": {
+    "mime-types": "^2.1.20"
+  }
 }
