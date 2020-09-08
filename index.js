@@ -14,15 +14,18 @@ const fs = require("fs");
 const path = require("path");
 const util = require("util");
 const mime = require("mime-types");
-
+const Entities = require('html-entities').AllHtmlEntities;
+ 
 const PORT = process.argv[2] || 8080;
 const _access = util.promisify(fs.access);
 const _readdir = util.promisify(fs.readdir);
+const entities = new Entities();
 
 const genDirHTML = (files) => {
     let d_listing = "<pre>\n";
     d_listing += "<a href=\"../\">../</a>\n";
     files.forEach(file => {
+        file.name =  entities.encode(file.name);
         file.isDir
             ? d_listing += `<a href="${file.name}/">${file.name}/</a>\n`
             : d_listing += `<a href="${file.name}">${file.name}</a>\n`;
