@@ -39,6 +39,8 @@ const genDirHTML = (files) => {
 const server = http.createServer(async (req, res) => {
     console.log("::request::", req.url);
     req.url = querystring.unescape(req.url);
+    req.url = req.url.replace(/(\.\.\/?)/g, '');
+    console.log("::request Clean::", req.url);
     const fp = path.join(process.cwd(), req.url);
     try {
         // if a file does not exist we send a 404 from catch
